@@ -50,7 +50,7 @@ mydata.to_csv('mydata.csv')
 
 def z_link_func(x, data=mydata):
     stim = (np.asarray(dmatrix('0 + C(s, [[1], [-1]])',
-                               {'s': data.session.ix[x.index]}))
+                               {'s': data.condition.ix[x.index]}))
     )
     return 1 / (1 + np.exp(-(x * stim)))
 
